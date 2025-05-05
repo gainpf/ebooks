@@ -1,0 +1,255 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<header class="header">
+		<nav class="nav container">
+			<div class="logo">
+				<svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+					<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+				</svg>
+				<span>MPC Book Vault</span>
+			</div>
+			<div class="nav-links">{# <a href="#" class="active">Home</a> #}
+				{# <a href="#">Browse</a>
+								        <a href="#">Categories</a>
+								        <a href="#">My Library</a> #}
+			</div>
+			<div class="nav-actions">
+				{# <button class="search-btn">
+					<svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="11" cy="11" r="8"/>
+						<path d="m21 21-4.3-4.3"/>
+					</svg>
+				</button> #}
+				{# <button class="cart-btn">
+					<svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="8" cy="21" r="1"/>
+						<circle cx="19" cy="21" r="1"/>
+						<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+					</svg>
+					<span class="cart-count">0</span>
+				</button>
+				<button class="primary-btn">Sign In</button> #}
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container">
+				<div class="hero-content">
+					<h1>Discover Your Next
+						<span>Biblical</span>
+						Book</h1>
+					<i>"An intelligent heart acquires knowledge, and the ear of the wise seeks knowledge." <span class="badge badge-light">Proverbs: 18:15</span></i>
+					<div class="hero-actions">
+						<button class="primary-btn">Happy Reading...</button>
+						{# <button class="secondary-btn">Learn More</button> #}
+					</div>
+					{# <div class="search-bar">
+						<svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="11" cy="11" r="8"/>
+							<path d="m21 21-4.3-4.3"/>
+						</svg>
+						<input type="text" placeholder="Search by title, author, or genre...">
+					</div> #}
+				</div>
+			</div>
+		</section>
+
+		<section class="featured">
+			<div class="container">
+				<div class="section-header">
+					<h2>Featured Books</h2>
+					{# <a href="#" class="view-all">View all</a> #}
+				</div>
+                {# <div id="ebook_path" data-path="{{ path('ebook_reader') }}"></div> #}
+
+				<div class="book-grid" id="featured-books">
+
+					<div class="book-card border border-light shadow-sm rounded">
+						<div class="book-card-image">
+							<img src="{{ asset('images/even_in_our_darkness.jpg') }}" alt="Even in our darkness">
+
+						</div>
+						<div class="book-card-content">
+							<h6 class="text-uppercase">Even in our darkness</h6>
+							<p class="book-card-author">Jack S. Deere</p>
+
+
+							<span class="badge text-bg-warning">300 pages</span>
+
+							<span class="badge text-bg-danger">3.3MB</span>
+                            <span class="badge text-bg-info">2018</span>
+
+							<div class="book-card-footer mt-3">
+								<a  class="btn btn-primary btn-sm m-1 read" target="__blank" href="{{ path('ebook_reader', {'name': 'even_in_our_darkness.pdf'}, relative = true) }}">
+									<i class="bi bi-book me-1"></i>Read</a>
+								<a type="button" class="btn btn-light btn-sm m-1" href="{{ asset('pdf/even_in_our_darkness.pdf') }}" download>
+									<i class="bi bi-download me-1"></i>Download</a>
+							</div>
+						</div>
+					</div>
+					<div class="book-card border border-light shadow-sm rounded">
+						<div class="book-card-image">
+							<img src="{{ asset('images/encyclopedia.jpg') }}" alt="Encyclopedia">
+
+						</div>
+						<div class="book-card-content">
+							<h6 class="text-uppercase">Encyclopedia Biblical</h6>
+							<p class="book-card-author">Paul D. Gardner</p>
+
+
+							<span class="badge text-bg-warning">1036 pages</span>
+
+							<span class="badge text-bg-danger">3.7MB</span>
+                            <span class="badge text-bg-info">1995</span>
+
+							<div class="book-card-footer mt-3">
+								<a  class="btn btn-primary btn-sm m-1 read" href="{{ path('ebook_reader', {'name': 'encyclopedia_of_bible_characters.pdf'}) }}" target="__blank">
+									<i class="bi bi-book me-1"></i>Read</a>
+								<a type="button" class="btn btn-light btn-sm m-1" href="{{ asset('pdf/encyclopedia_of_bible_characters.pdf') }}" download>
+									<i class="bi bi-download me-1"></i>Download</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="book-card border border-light shadow-sm rounded">
+						<div class="book-card-image">
+							<img src="{{ asset('images/grc.jpg') }}" alt="Global renewal Christianity">
+
+						</div>
+						<div class="book-card-content">
+							<h6 class="text-uppercase text-break">Global renwal Christianity</h6>
+							<p class="book-card-author">Vinson Synan and Amos Yong</p>
+
+
+							<span class="badge text-bg-warning">419 pages</span>
+
+							<span class="badge text-bg-danger">4.5MB</span>
+                            <span class="badge text-bg-info">2013</span>
+
+							<div class="book-card-footer mt-3">
+								<a class="btn btn-primary btn-sm m-1 read" href="{{ path('ebook_reader', {'name': 'global_renewal_christianity.pdf'}) }}" target="__blank">
+									<i class="bi bi-book me-1"></i>Read</a>
+								<a type="button" class="btn btn-light btn-sm m-1" href="{{ asset('pdf/global_renewal_christianity.pdf') }}" download>
+									<i class="bi bi-download me-1"></i>Download</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+      
+
+		{# <section class="categories">
+				      <div class="container">
+				        <h2>Browse by Category</h2>
+				        <div class="category-grid" id="categories"></div>
+				      </div>
+				    </section> #}
+
+		{# <section class="bestsellers">
+				      <div class="container">
+				        <div class="section-header">
+				          <h2>Bestsellers</h2>
+				          <div class="carousel-controls">
+				            <button class="carousel-btn prev" id="prev-bestseller">
+				              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				                <path d="m15 18-6-6 6-6"/>
+				              </svg>
+				            </button>
+				            <button class="carousel-btn next" id="next-bestseller">
+				              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				                <path d="m9 18 6-6-6-6"/>
+				              </svg>
+				            </button>
+				          </div>
+				        </div>
+				        <div class="book-carousel" id="bestsellers"></div>
+				      </div>
+				    </section> #}
+
+		{# <section class="newsletter">
+			<div class="container">
+				<div class="newsletter-content">
+					<h2>Join Our Reading Community</h2>
+					<p>Subscribe to get weekly book recommendations and updates on new releases.</p>
+					<form id="newsletter-form" class="newsletter-form">
+						<input type="email" placeholder="Your email address" required>
+						<button type="submit" class="primary-btn">Subscribe</button>
+					</form>
+					<p class="disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+				</div>
+			</div>
+		</section> #}
+	</main>
+	
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-section">
+					<div class="logo">
+						<svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+							<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+						</svg>
+						<span>MPC Book Vault</span>
+					</div>
+					<p>Your premier destination for biblical reading.</p>
+				</div>
+				<div class="footer-section">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Browse</a></li>
+						<li><a href="#">Categories</a></li>
+						<li><a href="#">My Library</a></li>
+					</ul>
+				</div>
+				<div class="footer-section">
+					<h3>Support</h3>
+					<ul>
+						<li><a href="#">Help Center</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div class="footer-section">
+					<h3>Connect</h3>
+					<div class="social-links">
+						<a href="#" aria-label="Twitter">
+							<svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+							</svg>
+						</a>
+						<a href="#" aria-label="Facebook">
+							<svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+							</svg>
+						</a>
+						<a href="#" aria-label="Instagram">
+							<svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+								<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2025 MPCBookVault. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+
+{% endblock %}

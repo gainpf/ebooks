@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block importmap %}
+    {{ importmap(['pdfviewer']) }}
+{% endblock %}
+
+{% block body %}
+<style>
+  .pdfobject-container { height: 100vh; border: 1px solid #ccc; }
+</style>
+
+<div id="pdf_path" data-path="{{ asset('pdf/' ~ name) }}"></div>
+{# <div id="pdf_path" data-path="{{ '/public/assets/pdf/' ~ name }}"></div> #}
+
+
+<div id="myebook"></div>
+{% endblock %}
